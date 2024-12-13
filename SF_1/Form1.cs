@@ -27,5 +27,10 @@ namespace SF_1
         {
 
         }
+
+        private void Form1_Load(object sender, EventArgs e)
+        {
+            int a = 0;
+        }
     }
 }
