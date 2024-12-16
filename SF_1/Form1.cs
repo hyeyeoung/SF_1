@@ -15,7 +15,20 @@ namespace SF_1
         public Form1()
         {
             InitializeComponent(); // -> Form1.designe.cs로 이동
+            byte inClassChildren = 10;
+            short inClassTeachers = 2;
+            int citizenNumber = 5000;
 
+            float biasPercent = 10;
+            double learningRate = 0.5;
+            decimal sumAllPeaopleheight = 500000000;
+
+            textBox_print.Text = inClassChildren.GetType().ToString() + "  inClassChildren " + inClassChildren + "\r\n";
+            textBox_print.Text += inClassTeachers.GetType().ToString() + "  inClassTeachers " + inClassTeachers + "\r\n";
+            textBox_print.Text += citizenNumber.GetType().ToString() + "  citizenNumber " + citizenNumber + "\r\n";
+            textBox_print.Text += biasPercent.GetType().ToString() + "  biasPercent " + biasPercent + "\r\n";
+            textBox_print.Text += learningRate.GetType().ToString() + "  learningRate " + learningRate + "\r\n";
+            textBox_print.Text += sumAllPeaopleheight.GetType().ToString() + "  sumAllPeaopleheight " + sumAllPeaopleheight + "\r\n";
         }
         private void textBox1_TextChanged(object sender, EventArgs e)
         {
