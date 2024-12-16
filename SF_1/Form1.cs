@@ -16,10 +16,6 @@ namespace SF_1
         {
             InitializeComponent(); // -> Form1.designe.cs로 이동
 
-            //  MessageBox.Show("Hello");
-            /*
-             * 
-             */
             textBox_print.Text = "이것은 \r\n멀티라인\r\n텍스트박스\r\n인데요."; // 줄 바꾸고 싶으면 \r\n사용 필수
         }
 
