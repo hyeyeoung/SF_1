@@ -25,13 +25,20 @@ namespace SF_1
             StringArr[6] = tmp[0];
             StringArr[7] = tmp[1];
             StringArr[8] = tmp[2];
-
             StringArr[9] = "우리 나라 만세".Substring(3, 2);
-            textBox_print.Text = "";
-            for(int i = 0; i < 10; i++)
-            {
-                textBox_print.Text += StringArr[i]+"\r\n";
-            }
+
+            // ---------------------------------------
+            textBox_print.Text = StringArr[0]+"\r\n";
+            textBox_print.Text += StringArr[1] + "\r\n";
+            textBox_print.Text += StringArr[2] + "\r\n";
+            textBox_print.Text += StringArr[3] + "\r\n";
+            textBox_print.Text += StringArr[4] + "\r\n";
+            textBox_print.Text += StringArr[5] + "\r\n";
+            textBox_print.Text += StringArr[6] + "\r\n";
+            textBox_print.Text += StringArr[7] + "\r\n";
+            textBox_print.Text += StringArr[8] + "\r\n";
+            textBox_print.Text += StringArr[9] + "\r\n";
+
         }
         private void textBox1_TextChanged(object sender, EventArgs e)
         {
