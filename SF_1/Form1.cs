@@ -14,27 +14,34 @@ namespace SF_1
         public Form1()
         {
             InitializeComponent(); // -> Form1.designe.cs로 이동
-            string[] StringArr = new string[10];
 
-            StringArr[0] = "동해 물과 백두산이".IndexOf("백두산").ToString();
-            StringArr[1] = "토요일에 먹는 토마토".LastIndexOf("토").ToString();
-            StringArr[2] = "질서있는 퇴장".Contains("퇴").ToString();
-            StringArr[3] = "그 사람의 그림자는 그랬다.".Replace("그", "이");
-            StringArr[4] = "삼성 갤럭시".Insert(3, "애플 ");
-            StringArr[5] = "오늘은 왠지 더 배고프다".Remove(7,1);
-            String[] tmp = "이름,나이,전화번호".Split(',');
-            StringArr[6] = tmp[0];
-            StringArr[7] = tmp[1];
-            StringArr[8] = tmp[2];
-            StringArr[9] = "우리 나라 만세".Substring(3, 2);
+            string message = "멈추지 않는 한 얼마나 천천히 가는지는 중요하지 않다.-공자";
 
-            // ---------------------------------------
+            // 1. "-공자" 부분 삭제
+            string onePractice = message.Remove(message.LastIndexOf("-공자"));
 
-            textBox_print.Text = "";
-            for(int i = 0; i < 10; i++)
-            {
-                textBox_print.Text = StringArr[i] + "\r\n";
-            }
+            // 2. "얼마나, 천천히, 가는지" 단어 나누고 배열에 요소로 각각 저장
+            string[] splitSpaceBar;
+            int start = message.IndexOf("얼마나");
+            int end = message.LastIndexOf("는");
+            string twoPractice = message.Substring(start, end-start);
+            splitSpaceBar = twoPractice.Split(' ');
+
+            // 3. .- 제거, " "을 ,로 변경
+            int findidx = message.IndexOf(".");
+            string threePractice = message.Remove(findidx,1);
+            findidx = message.IndexOf("-");
+            threePractice = message.Remove(findidx, 1);
+            threePractice = threePractice.Replace(' ', ',');
+
+            textBox_print.Text = onePractice + "\r\n";
+            textBox_print.Text += splitSpaceBar[0] + "\r\n";
+            textBox_print.Text += splitSpaceBar[1] + "\r\n";
+            textBox_print.Text += splitSpaceBar[2] + "\r\n";
+            textBox_print.Text += threePractice + "\r\n";
+
+
+
         }
         private void textBox1_TextChanged(object sender, EventArgs e)
         {
