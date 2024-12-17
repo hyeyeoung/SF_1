@@ -28,10 +28,10 @@ namespace SF_1
             splitSpaceBar = twoPractice.Split(' ');
 
             // 3. .- 제거, " "을 ,로 변경
-            int findidx = message.IndexOf(".");
+            int findidx = message.LastIndexOf(".");
             string threePractice = message.Remove(findidx,1);
-            findidx = message.IndexOf("-");
-            threePractice = message.Remove(findidx, 1);
+            findidx = threePractice.IndexOf("-");
+            threePractice = threePractice.Remove(findidx, 1);
             threePractice = threePractice.Replace(' ', ',');
 
             textBox_print.Text = onePractice + "\r\n";
