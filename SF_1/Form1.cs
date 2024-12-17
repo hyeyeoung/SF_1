@@ -39,9 +39,6 @@ namespace SF_1
             textBox_print.Text += splitSpaceBar[1] + "\r\n";
             textBox_print.Text += splitSpaceBar[2] + "\r\n";
             textBox_print.Text += threePractice + "\r\n";
-
-
-
         }
         private void textBox1_TextChanged(object sender, EventArgs e)
         {
