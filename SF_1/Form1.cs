@@ -23,8 +23,8 @@ namespace SF_1
             // 2. "얼마나, 천천히, 가는지" 단어 나누고 배열에 요소로 각각 저장
             string[] splitSpaceBar;
             int start = message.IndexOf("얼마나");
-            int end = message.LastIndexOf("는");
-            string twoPractice = message.Substring(start, end-start);
+            int end = message.LastIndexOf("가는지");
+            string twoPractice = message.Substring(start, (end + 3)-start);
             splitSpaceBar = twoPractice.Split(' ');
 
             // 3. .- 제거, " "을 ,로 변경
