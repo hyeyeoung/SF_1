@@ -15,30 +15,19 @@ namespace SF_1
         {
             InitializeComponent(); // -> Form1.designe.cs로 이동
 
-            string message = "멈추지 않는 한 얼마나 천천히 가는지는 중요하지 않다.-공자";
+            int[] result = dividednMod_IntegerArr(13, 5);
 
-            // 1. "-공자" 부분 삭제
-            string onePractice = message.Remove(message.LastIndexOf("-공자"));
+            textBox_print.Text = result[0].ToString() + "\r\n";
+            textBox_print.Text += result[1].ToString();
+        }
 
-            // 2. "얼마나, 천천히, 가는지" 단어 나누고 배열에 요소로 각각 저장
-            string[] splitSpaceBar;
-            int start = message.IndexOf("얼마나");
-            int end = message.LastIndexOf("가는지");
-            string twoPractice = message.Substring(start, (end + 3)-start);
-            splitSpaceBar = twoPractice.Split(' ');
+        int[] dividednMod_IntegerArr(int a, int b)
+        {
+            int[] Result = new int[2];
+            Result[0] = a / b;
+            Result[1] = a % b;
 
-            // 3. .- 제거, " "을 ,로 변경
-            int findidx = message.LastIndexOf(".");
-            string threePractice = message.Remove(findidx,1);
-            findidx = threePractice.IndexOf("-");
-            threePractice = threePractice.Remove(findidx, 1);
-            threePractice = threePractice.Replace(' ', ',');
-
-            textBox_print.Text = onePractice + "\r\n";
-            textBox_print.Text += splitSpaceBar[0] + "\r\n";
-            textBox_print.Text += splitSpaceBar[1] + "\r\n";
-            textBox_print.Text += splitSpaceBar[2] + "\r\n";
-            textBox_print.Text += threePractice + "\r\n";
+            return Result;
         }
         private void textBox1_TextChanged(object sender, EventArgs e)
         {
