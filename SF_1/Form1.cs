@@ -14,13 +14,9 @@ namespace SF_1
         public Form1()
         {
             InitializeComponent(); // -> Form1.designe.cs로 이동
-            
-            Random randomINT = new Random();
-            int coin = randomINT.Next();
 
-            bool TrowedCoinResult = ThrowCoin(coin % 2 == 1);
-            textBox_print.Text = "발생한 난수: " + coin.ToString() + "\r\n"; 
-            if (TrowedCoinResult)
+            bool myChoice = true;
+            if (ThrowCoin(myChoice))
             {
                 textBox_print.Text += "승리\r\n";
             }
@@ -32,7 +28,11 @@ namespace SF_1
 
         bool ThrowCoin(bool x)
         {
-            if (x)
+            Random randomINT = new Random();
+            int coin = randomINT.Next();
+            bool randomCoinRes = coin % 2 == 1;
+
+            if (x == randomCoinRes)
                 return true;
             else
                 return false;
