@@ -16,7 +16,7 @@ namespace SF_1
             InitializeComponent(); // -> Form1.designe.cs로 이동
 
             bool myChoice = true;
-            if (ThrowCoin(myChoice))
+            if (ThrowCoinAndMatch(myChoice))
             {
                 textBox_print.Text += "승리\r\n";
             }
@@ -26,11 +26,13 @@ namespace SF_1
             }
         }
 
-        bool ThrowCoin(bool x)
+        bool ThrowCoinAndMatch(bool x)
         {
             Random randomINT = new Random();
             int coin = randomINT.Next();
+            textBox_print.Text = "내가 선택한 값: " + x.ToString() + "\r\n";
             bool randomCoinRes = coin % 2 == 1;
+            textBox_print.Text += "자동 생성된 값: " + randomCoinRes.ToString() + "\r\n";
 
             if (x == randomCoinRes)
                 return true;
