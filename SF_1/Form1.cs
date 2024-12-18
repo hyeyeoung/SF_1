@@ -15,13 +15,13 @@ namespace SF_1
         {
             InitializeComponent(); // -> Form1.designe.cs로 이동
 
-            int[] result = dividednMod_IntegerArr(13, 5);
+            int[] result = dividednMod(13, 5);
 
             textBox_print.Text = result[0].ToString() + "\r\n";
             textBox_print.Text += result[1].ToString();
         }
 
-        int[] dividednMod_IntegerArr(int a, int b)
+        int[] dividednMod(int a, int b)
         {
             int[] Result = new int[2];
             Result[0] = a / b;
