@@ -14,21 +14,30 @@ namespace SF_1
         public Form1()
         {
             InitializeComponent(); // -> Form1.designe.cs로 이동
+            
+            Random randomINT = new Random();
+            int coin = randomINT.Next();
 
-            int[] result = dividednMod(13, 5);
-
-            textBox_print.Text = result[0].ToString() + "\r\n";
-            textBox_print.Text += result[1].ToString();
+            bool TrowedCoinResult = ThrowCoin(coin % 2 == 1);
+            textBox_print.Text = "발생한 난수: " + coin.ToString() + "\r\n"; 
+            if (TrowedCoinResult)
+            {
+                textBox_print.Text += "승리\r\n";
+            }
+            else
+            {
+                textBox_print.Text += "패배\r\n";
+            }
         }
 
-        int[] dividednMod(int a, int b)
+        bool ThrowCoin(bool x)
         {
-            int[] Result = new int[2];
-            Result[0] = a / b;
-            Result[1] = a % b;
-
-            return Result;
+            if (x)
+                return true;
+            else
+                return false;
         }
+
         private void textBox1_TextChanged(object sender, EventArgs e)
         {
 
